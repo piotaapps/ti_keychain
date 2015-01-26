@@ -18,7 +18,9 @@
 
 -(id)moduleGUID
 {
-	return @"acf8434d-5290-4b73-8f39-e4cd7349860a";
+	//return @"acf8434d-5290-4b73-8f39-e4cd7349860a";
+    //changed from appc marketplace guid
+    return @"7fd1e0b4-6ee5-4e6f-b18c-b2fc36e54123";
 }
 
 -(NSString*)moduleId

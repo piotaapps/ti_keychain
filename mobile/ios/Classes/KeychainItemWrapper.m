@@ -275,8 +275,10 @@
     NSDictionary *attributes = NULL;
     NSMutableDictionary *updateItem = NULL;
     OSStatus result;
+    OSStatus searchResult;
     
-    if (SecItemCopyMatching((CFDictionaryRef)genericPasswordQuery, (CFTypeRef *)&attributes) == noErr)
+    searchResult = SecItemCopyMatching((CFDictionaryRef)genericPasswordQuery, (CFTypeRef *)&attributes);
+    if (searchResult == noErr)
     {
         // First we need the attributes from the Keychain.
         updateItem = [NSMutableDictionary dictionaryWithDictionary:attributes];
@@ -312,11 +314,14 @@
     }
     else
     {
+        NSLog(@"error locating keychain item: %d", (int) searchResult);
         // No previous item found; add the new one.
         result = SecItemAdd((CFDictionaryRef)[self dictionaryToSecItemFormat:keychainItemData], NULL);
         if (result != noErr) {
             NSLog(@"error creating keychain item: %d", (int) result);
             NSLog(@"keychainItemData: %@", [keychainItemData description]);
+        } else {
+            NSLog(@"created item for %@", [keychainItemData description]);
         }
     }
 }

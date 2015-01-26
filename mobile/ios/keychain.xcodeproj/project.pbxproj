@@ -243,6 +243,7 @@
 				GCC_PREFIX_HEADER = ComObscureKeychain_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = ComObscureKeychain;
 			};
 			name = Debug;
@@ -258,6 +259,7 @@
 				GCC_PREFIX_HEADER = ComObscureKeychain_Prefix.pch;
 				GCC_THUMB_SUPPORT = NO;
 				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = ComObscureKeychain;
 			};
 			name = Release;
